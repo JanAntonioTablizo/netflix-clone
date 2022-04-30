@@ -1,38 +1,523 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#index-header{
+    position: absolute;
+    width: 100%;
+    height: 84px;
+    padding: 20px 0 0 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#logo{
+    width: 140px;
+    margin: 8px 0 0 56px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#signin-btn{
+    margin: 8px 56px 0 0;
+    color: white;
+    padding: 7px 17px;
+    font-weight: 400;
+    font-size: 1rem;
+    float: right;
+    border: none;
+    border-radius: 3px;
+    background-color: #e50914;
+    cursor: pointer;
 }
-
-.App-link {
-  color: #61dafb;
+#story-div-hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+#hero{
+    width: 100%;
+    border-bottom: 1px solid;
+    background: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.8)),url(images/hero\ background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 8px solid #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#title-div{
+    padding: 200px 0;
+    width: 70%;
+    /* border: 1px solid silver; */
+}
+#title{
+    margin: auto;
+    width: 550px;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+#subtitle{
+    padding: 16px 0;
+    color: white;
+    font-size: 26;
+    font-weight: normal;
+    text-align: center;
+}
+#email-form{
+    padding-top: 10px;
+}
+#form-title{
+    color: white;
+    font-size: 19.2px;
+    font-weight: normal;
+    text-align: center;
+    padding: 0 20px 20px 20px;
+}
+#form-items-holder{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#form-email{
+    width: 450px;
+    height: 60px;
+    border: none;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    outline: none;
+    font-size: 18px;
+    padding-left: 30px;
+}
+#form-btn{
+    padding: 0px 26px;
+    width: 230px;
+    height: 62.2px;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    outline: none;
+    background-color: #e50914;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#watch-on-tv{
+    padding: 50px 80px;
+    background: rgba(0, 0, 0);
+    border-bottom: 8px solid #222;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#tv-img{
+    width: 38vw;
+    background: url(images/tv-back.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+#tv-title{
+    width: fit-content;
+    color: white;
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+#tv-subtitle{
+    color: white;
+    font-size: 20px;
+    font-weight: normal;
+    margin-top: 19.5px;
+}
+#download-watch{
+    padding: 50px 80px;
+    background: rgba(0, 0, 0);
+    border-bottom: 8px solid #222;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#cp-img{
+    width: 38vw;
+}
+#downloading{
+    padding: 0px 20px;
+    width: 65%;
+    max-width: 400px;
+    height: 100px;
+    background-color: rgba(0, 0, 0);
+    border-radius: 20px;
+    border: 2px solid rgba(255,255,255,.25);
+    margin: auto;
+    transform: translateY(-115%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#st-img{
+    width: 55px;
+}
+#dl-desc{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    line-height: 25px;
+}
+#dl-desc::after{
+    content:"";
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    right: 5%;
+    background: url(images/download-icon.gif);
+    background-position: center;
+    background-size: cover;
+}
+#dl-title{
+    width: fit-content;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+#dl-text{
+    width: fit-content;
+    color: #0071eb;
+    font-size: 14.4px;
+}
+#dw-title{
+    width: fit-content;
+    color: white;
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+#dw-subtitle{
+    color: white;
+    font-size: 20px;
+    font-weight: normal;
+    margin-top: 19.5px;
+}
+#watch-everywhere{
+    padding: 50px 80px;
+    background: rgba(0, 0, 0);
+    border-bottom: 8px solid #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#we-title{
+    width: fit-content;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+#we-subtitle{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: normal;
+    margin-top: 19.5px;
+}
+#for-kids{
+    padding: 50px 80px;
+    background: rgba(0, 0, 0);
+    border-bottom: 8px solid #222;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#fk-img{
+    width: 38vw;
+}
+#fk-title{
+    width: fit-content;
+    color: white;
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+#fk-subtitle{
+    color: white;
+    font-size: 20px;
+    font-weight: normal;
+    margin-top: 19.5px;
+}
+#frequently-ask-questions{
+    padding: 50px 80px;
+    background: rgba(0, 0, 0);
+    border-bottom: 8px solid #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#faq-btn-holder{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#faq-title{
+    padding: 20px;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+.faq-btns{
+    height: 80px;
+    width: 80%;
+    padding: 20px;
+    color: white;
+    font-size: 26px;
+    text-align: left;
+    background: #303030;
+    border: 1px solid rgba(0, 0, 0);
+    cursor: pointer;
+}
+.faq-icons{
+    float: right;
+}
+.faq-answers{
+    width: 80%;
+    background: #303030;
+    border: 1px solid rgba(0, 0, 0);
+}
+.faq-text{
+    padding: 20px;
+    color: white;
+    font-size: 26px;
+    border: 1px solid rgba(0, 0, 0);
+}
+@media(min-width: 1201px){
+    #tv-img{
+        width: 500px;
+    }
+    #cp-img{
+        width: 500px;
+    }
+    #fk-img{
+        width: 500px;
+    }
+}
+@media(max-width: 1200px){
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+@media(max-width: 1024px){
+
+}
+@media(max-width: 963px){
+    #watch-on-tv{
+        flex-direction: column;
+    }
+    #tv-img{
+        width: 60vw;
+    }
+    #tv-title{
+        width: 100%;
+        font-size: 40px;
+        text-align: center;
+    }
+    #tv-subtitle{
+        font-size: 20px;
+        text-align: center;
+    }
+    #download-watch{
+        flex-direction: column-reverse;
+    }
+    #cp-img{
+        width: 60vw;
+    }
+    #dw-title{
+        width: 100%;
+        font-size: 40px;
+        text-align: center;
+    }
+    #dw-subtitle{
+        font-size: 20px;
+        text-align: center;
+    }
+    #for-kids{
+        flex-direction: column-reverse;
+    }
+    #fk-img{
+        width: 60vw;
+    }
+    #fk-title{
+        width: 100%;
+        font-size: 40px;
+        text-align: center;
+    }
+    #fk-subtitle{
+        font-size: 20px;
+        text-align: center;
+    }
+}
+@media(max-width: 800px){
+    #title-div{
+        padding: 130px 0 100px 0;
+    }
+    #title{
+        width: fit-content;
+    }
+    #form-items-holder{
+        flex-direction: column;
+    }
+    #form-email{
+        border-radius: 50px;
+    }
+    #form-btn{
+        margin-top: 20px;
+        border-radius: 50px;
+    }
+}
+@media(max-width: 768px){
+    #tv-img{
+        min-width: 320px;
+    }
+    #cp-img{
+        min-width: 320px;
+    }
+    #fk-img{
+        min-width: 320px;
+    }
+    #downloading{
+        height: 80px;
+        width: 38vw;
+        min-width: 250px;   
+    }
+    #st-img{
+        width: 37px;
+    }
+    #dl-desc{
+        padding: 5px 10px;
+    }
+    #dl-desc::after{
+        width: 48px;
+        height: 48px;
+        right: 10%;
+    }
+    #dl-title{
+        font-size: 14px;
+    }
+    #dl-text{
+        font-size: 12px;
+    }
+    .faq-btns{
+        width: 435px;
+    }
+    .faq-answers{
+        width: 435px;
+    }
+}
+@media(max-width: 628px){
+    #logo{
+        margin-left: 30px;
+    }
+    #signin-btn{
+        margin-right: 30px;
+    }
+    #title{
+        font-size: 40px;
+    }
+    #subtitle{
+        font-size: 20px;
+    }
+    #form-email{
+        width: 70vw;
+        height: 50px;
+        font-size: 16px;
+    }
+    #form-btn{
+        width: 180px;
+        height: 50px;
+        font-size: 16px;
+    }
+    #frequently-ask-questions{
+        padding: 50px 30px;
+    }
+}
+@media(max-width: 513px){
+    #tv-title{
+        font-size: 26px;
+    }
+    #tv-subtitle{
+        font-size: 18px;
+    }
+    #dw-title{
+        font-size: 26px;
+    }
+    #dw-subtitle{
+        font-size: 18px;
+    }
+    #we-title{
+        font-size: 26px;
+    }
+    #we-subtitle{
+        font-size: 18px;
+    }
+    #fk-title{
+        font-size: 26px;
+    }
+    #fk-subtitle{
+        font-size: 18px;
+    }
+    #faq-title{
+        font-size: 26px;
+    }
+    .faq-btns{
+        font-size: 18px;
+    }
+    .faq-text{
+        font-size: 18px;
+    }
+    .faq-btns{
+        width: 300px;
+    }
+    .faq-answers{
+        width: 300px;
+    }
+}
+@media(max-width: 505px){
+    #logo{
+        width: 100px;
+        margin-left: 30px;
+    }
+    #signin-btn{
+        padding: 4px 8px;
+        margin-right: 30px;
+        font-size: 15px;
+    }
+    #title{
+        font-size: 26px;
+    }
+    #subtitle{
+        font-size: 18px;
+    }
+    #form-email{
+        font-size: 14px;
+    }
+    #form-btn{
+        font-size: 14px;
+    }
+}
+@media(max-width: 495px){
+    #watch-on-tv{
+        padding: 50px 50px;
+    }
+    #download-watch{
+        padding: 50px 50px;
+    }
+    #watch-everywhere{
+        padding: 50px 50px;
+    }
+    #for-kids{
+        padding: 50px 50px;
+    }
+}
+@media(max-width: 480px){
+
 }

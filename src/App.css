@@ -447,6 +447,10 @@
     #tv-subtitle{
         font-size: 18px;
     }
+    #form-title{
+        font-size: 18px;
+        padding: 0 10px 10px 10px;
+    }
     #dw-title{
         font-size: 26px;
     }
@@ -475,10 +479,10 @@
         font-size: 18px;
     }
     .faq-btns{
-        width: 300px;
+        width: 320px;
     }
     .faq-answers{
-        width: 300px;
+        width: 320px;
     }
 }
 @media(max-width: 505px){

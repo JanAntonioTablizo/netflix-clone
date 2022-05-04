@@ -2,6 +2,9 @@
     margin: 0;
     font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
+body{
+    background-color: rgba(0, 0, 0);
+}
 /* Index Style */
 #index-header{
     position: absolute;
@@ -464,13 +467,18 @@ li{
     font-size: 22px;
 }
 .movies{
-    padding: 10px 10px 0 10px;
+    padding: 10px;
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
 }
 .nr-movies{
     margin-right: 10px;
+    cursor: pointer;
+}
+.nr-movies:hover{
+    transform: scale(1.05);
+    transition: all 0.2s linear;
 }
 ::-webkit-scrollbar {
     background-color: #303030;
@@ -650,7 +658,6 @@ li{
         justify-content: center;
         border: 1px solid #e50914;
         border-left: none;
-        border-bottom-right-radius: 10px;
         background-color: #303030;
         transition: all 0.8s linear;
     }
